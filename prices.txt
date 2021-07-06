@@ -1,0 +1,17 @@
+prices=list(map(int,input().split()))
+i=0
+j=0
+def solution(prices,i,j):
+    t=prices[i+1:]
+    if i>len(prices)-1:
+        return prices
+    if j>=len(t):
+        solution(prices,i+1,j=0)
+    elif t[j]<prices[i]:
+        prices[i]-=t[j]
+        solution(prices,i+1,j=0)
+    else:
+         solution(prices,i,j+1)
+solution(prices,i,j)
+print(prices)
+
