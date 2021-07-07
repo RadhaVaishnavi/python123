@@ -1,0 +1,13 @@
+#input[1,0,2,3,0,4,5] 
+#output[1,0,0,2,3,0,0]
+
+p=list(map(int,input().split()))
+l=len(p)
+def arr(p):
+    for i in range(len(p)-1,-1,-1):
+        if p[i]==0:
+            p.insert(i+1,0)
+        if len(p)>l:
+            p.pop()
+arr(p)
+print(p)
